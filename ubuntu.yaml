@@ -9,7 +9,7 @@
   become: yes
 
   vars:
-    ansible_pull_url: "https://github.com/SecureOps/sops-remoteWksDeploy"
+    ansible_pull_url: "https://github.com/SecureOps/sops-remoteProv.git"
     ansible_pull_playbook: "ubuntu.yaml"
 
   tasks:  
