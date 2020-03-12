@@ -71,6 +71,7 @@
           - "libwebkitgtk-1.0-0"
           - "libproxy1-plugin-webkit"
           - "libgnome-keyring0"
+          - "zoiper5"
           - "gip"
           - "traceroute"
           - "netwox"
