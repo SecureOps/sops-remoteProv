@@ -40,10 +40,16 @@
         filename: "amazon-workspaces-clients"
         state: present
 
-    - name: "Amazon Workspaces Repository"
+    - name: "Google Chrome Repository"
       apt_repository:
         repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" 
         filename: "google-chrome"
+        state: present
+
+    - name: "Adding sops Repository"
+      apt_repository:
+        repo: "deb https://repository.redlabnet.com/nexus/repository/sops-bionic-public {{ ansible_distribution_release }} main" 
+        filename: "sops"
         state: present
 
     - apt: 
