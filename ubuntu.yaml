@@ -17,7 +17,6 @@
         msg: "not supported" 
       when: ( ansible_distribution not in ['Ubuntu','Debian'] )
 
-
     - name: "Add apt repo keys"
       apt_key:
         url: "{{ item }}"
@@ -25,6 +24,7 @@
       loop:
         - "https://workspaces-client-linux-public-key.s3-us-west-2.amazonaws.com/ADB332E7.asc"
         - "https://dl.google.com/linux/linux_signing_key.pub"
+        - "https://repository.redlabnet.com/aptly/sops.key"
 
     - name: "Amazon Workspaces Repository"
       apt_repository:
@@ -50,6 +50,9 @@
           - "workspacesclient"
           - "google-chrome-stable"
           - "chromium-browser"
+          - "pulse"
+          - "globalprotect"
+          - "icaclient"
         state: "latest"
         update_cache: "yes"
 
