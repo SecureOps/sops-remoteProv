@@ -22,7 +22,7 @@
         path: "{{ item }}"
         state: absent
       loop:
-        - "/etc/apt/sources.list.d/chrome.list"
+        - "/etc/apt/sources.list.d/google.list"
 
 
     - name: "Add apt repo keys"
