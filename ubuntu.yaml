@@ -17,6 +17,14 @@
         msg: "not supported" 
       when: ( ansible_distribution not in ['Ubuntu','Debian'] )
 
+    - name: "Remove old or not used files"
+      file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - "/etc/apt/sources.list.d/chrome.list"
+
+
     - name: "Add apt repo keys"
       apt_key:
         url: "{{ item }}"
@@ -35,7 +43,7 @@
     - name: "Amazon Workspaces Repository"
       apt_repository:
         repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" 
-        filename: "google"
+        filename: "google-chrome"
         state: present
 
     - apt: 
@@ -53,6 +61,7 @@
           - "pulse"
           - "globalprotect"
           - "icaclient"
+          - "remmina"
         state: "latest"
         update_cache: "yes"
 
