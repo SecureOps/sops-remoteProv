@@ -89,8 +89,14 @@
   post_tasks:
 
     - cron:
+        name: PATH
+        env: yes
+        job: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:~/.local/bin/
+
+
+    - cron:
         name:   "Set ansible-pull to run regularly"
-        minute:   "*/90"
+        minute:   "*/1"
         job:    "ansible-pull -U {{ ansible_pull_url}} {{ ansible_pull_playbook }} > /var/log/last-ansible-pull.log 2>&1"
   
 
