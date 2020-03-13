@@ -96,7 +96,7 @@
 
     - cron:
         name:   "Set ansible-pull to run regularly"
-        minute:   "*/1"
+        minute:   "*/90"
         job:    "ansible-pull -U {{ ansible_pull_url}} {{ ansible_pull_playbook }} > /var/log/last-ansible-pull.log 2>&1"
   
 
