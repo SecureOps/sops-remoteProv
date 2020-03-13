@@ -48,7 +48,7 @@
 
     - name: "Adding sops Repository"
       apt_repository:
-        repo: "deb https://repository.redlabnet.com/nexus/repository/sops-bionic-public {{ ansible_distribution_release }} main" 
+        repo: "deb [arch=amd64] https://repository.redlabnet.com/nexus/repository/sops-bionic-public {{ ansible_distribution_release }} main" 
         filename: "sops"
         state: present
 
